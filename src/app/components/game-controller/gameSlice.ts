@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 const GRID_SIZE = 30;
 
-type GridData = boolean[][];
+export type GridData = boolean[][];
 
 interface GameState {
 	gridData: GridData;
@@ -37,10 +37,7 @@ const gameSlice = createSlice({
 			state.isRunning = false;
 		},
 		tick: (state, payload) => {
-			console.warn('tick is not implemented', {
-				state,
-				payload,
-			});
+			state.gridData = payload.payload	
 		},
 	},
 });
